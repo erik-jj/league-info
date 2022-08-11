@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "../../components/navbar";
+import Header from "../../components/header";
 import fondo from "../../assets/background/background.PNG";
+import SearchBar from "../../components/search-bar";
 function App() {
   const divStyle = {
     color: "blue",
@@ -9,10 +10,12 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Header />
 
-      <div className=" bg-cover	  w-screen	 h-screen " style={divStyle}>
-        <div className="bg-black   opacity-70 bg-cover	 m w-screen	 h-screen "></div>
+      <div className=" z-0 bg-cover	 bg-center w-screen	 h-screen " style={divStyle}>
+        <div className="z-0  bg-black bg-opacity-60 bg-cover	 m w-screen	 h-screen ">
+          <SearchBar />
+        </div>
       </div>
     </>
   );
