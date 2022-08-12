@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
@@ -8,7 +8,11 @@ function classNames(...classes) {
 }
 
 export default function SearchBar() {
-  const [dropDown, setDropDown] = useState(false);
+  const handleDropDown = () => {
+    window.event.preventDefault();
+
+
+  };
 
   return (
     <>
@@ -41,17 +45,92 @@ export default function SearchBar() {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
+                      <>
                       <a
-                        href="/"
-                        className={classNames(
-                          active
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-700",
-                          "block px-4 py-2 text-sm"
-                        )}
-                      >
-                        Asesino
-                      </a>
+                          href="/"
+                          onClick={()=>handleDropDown('All')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Todos
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Assassin')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Asesinos
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Fighter')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Luchadores
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Mage')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Magos
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Marksman')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Tiradores
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Support')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Soportes
+                        </a>
+                        <a
+                          href="/"
+                          onClick={()=>handleDropDown('Tank')}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Tanques
+                        </a>
+                      </>
                     )}
                   </Menu.Item>
                 </div>
