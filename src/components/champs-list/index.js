@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ChampItem from "./champ-item";
+import { AppContext } from "../application/provider";
+
 const ChampsList = () => {
   const [champList, setChampList] = useState([]);
+  const [state, setState] = useContext(AppContext);
 
   const ObtenerDatos = async () => {
     const data = await fetch(
@@ -18,12 +21,28 @@ const ChampsList = () => {
 
   return (
     <>
-      <div className="grid grid-cols-2 mt-10 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mx-0 	">
-        {champList.map((champ) => (
-          <ChampItem props={champ} />
-        ))}
+      <div className=" grid grid-cols-2 my-10 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mx-0 	">
+        {champList.map((champ) => {
+          console.log(state.filtro);
+          if (state.filtro === "All") {
+            return champ.name
+              .toLowerCase()
+              .includes(state.busqueda.toLowerCase()) ? (
+              <ChampItem props={champ} />
+            ) : null;
+          } else {
+            return champ.tags.includes(state.filtro) ? (
+              champ.name
+                .toLowerCase()
+                .includes(state.busqueda.toLowerCase()) ? (
+                <ChampItem props={champ} />
+              ) : null
+            ) : null;
+          }
+        })}
       </div>
     </>
   );
 };
 export default ChampsList;
+//<ChampItem props={champ} />;
