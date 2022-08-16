@@ -1,8 +1,10 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logos/logo.png";
+
 const navigation = [
-  { name: "Campeones", href: "/" },
+  { name: "Campeones", href: "/champs" },
   { name: "Objetos", href: "/" },
   { name: "Regiones", href: "/" },
 ];
@@ -13,77 +15,81 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-
-      <Disclosure as="nav" className=" fixed w-screen  bg-slate-900 z-20  ">
-        {({ open }) => (
-          <>
-            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-              <div className="relative flex items-center justify-between h-16">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
+    <Disclosure as="nav" className=" fixed w-screen  bg-slate-900 z-20  ">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start ">
+                <div className="flex-shrink-0 flex items-center">
+                  <Link to="/">
+                    <img
+                      className="block lg:hidden h-10 w-auto hover:cursor-pointer"
+                      src={logo}
+                      alt="league"
+                    />
+                  </Link>
+                  <Link to="/">
+                    <img
+                      className="hidden lg:block h-10 w-auto hover:cursor-pointer"
+                      src={logo}
+                      alt="league"
+                    />
+                  </Link>
                 </div>
-                <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start ">
-                  <div className="flex-shrink-0 flex items-center">
-                    <img
-                      className="block lg:hidden h-10 w-auto"
-                      src={logo}
-                      alt="league"
-                    />
-                    <img
-                      className="hidden lg:block h-10 w-auto"
-                      src={logo}
-                      alt="league"
-                    />
-                  </div>
-                  <div className="hidden sm:block sm:ml-6">
-                    <div className="flex space-x-4 ">
-                      {navigation.map((item) => (
+                <div className="hidden sm:block sm:ml-6">
+                  <div className="flex space-x-4 my-4">
+                    {navigation.map((item) => (
+                      <Link to={item.href}>
                         <a
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            "text-gray-200 hover:bg-gray-700 tracking-wide hover:text-white px-3 py-2 rounded-md text-md font-medium"
+                            "text-gray-200 hover:bg-gray-700 tracking-wide hover:text-white px-3 py-2 rounded-md text-lg  font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
                         </a>
-                      ))}
-                    </div>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className="sm:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 ">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-medium "
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
-              </div>
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-  
+          </div>
+          <Disclosure.Panel className="sm:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 ">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium "
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 }

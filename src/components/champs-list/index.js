@@ -5,7 +5,7 @@ import { AppContext } from "../application/provider";
 const ChampsList = () => {
   const [champList, setChampList] = useState([]);
   const [state, setState] = useContext(AppContext);
-
+  const { filtro, busqueda } = state;
   const ObtenerDatos = async () => {
     const data = await fetch(
       "http://ddragon.leagueoflegends.com/cdn/12.15.1/data/en_US/champion.json"
@@ -23,18 +23,13 @@ const ChampsList = () => {
     <>
       <div className=" grid grid-cols-2 my-10 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mx-0 	">
         {champList.map((champ) => {
-          console.log(state.filtro);
-          if (state.filtro === "All") {
-            return champ.name
-              .toLowerCase()
-              .includes(state.busqueda.toLowerCase()) ? (
+          if (filtro === "All") {
+            return champ.name.toLowerCase().includes(busqueda.toLowerCase()) ? (
               <ChampItem props={champ} />
             ) : null;
           } else {
-            return champ.tags.includes(state.filtro) ? (
-              champ.name
-                .toLowerCase()
-                .includes(state.busqueda.toLowerCase()) ? (
+            return champ.tags.includes(filtro) ? (
+              champ.name.toLowerCase().includes(busqueda.toLowerCase()) ? (
                 <ChampItem props={champ} />
               ) : null
             ) : null;
@@ -45,4 +40,3 @@ const ChampsList = () => {
   );
 };
 export default ChampsList;
-//<ChampItem props={champ} />;
