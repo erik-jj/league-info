@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ImageViewer from "../image-viewer";
 
 const ChampInfo = () => {
   const [champ, setChamp] = useState({});
@@ -8,7 +9,7 @@ const ChampInfo = () => {
   };
 
   const lore =
-    "Aatrox y sus hermanos, que alguna vez fueron respetados defensores de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor para Runaterra y los derrotaron con hechicería mortal usada con astucia. Pero, después de siglos de encarcelamiento, Aatrox fue el primero en encontrar la libertad una vez más; corrompió y transformó a los bastante tontos como para intentar blandir el arma mágica que contenía su esencia. Ahora, con cuerpos robados, camina por Runaterra con una apariencia retorcida de su forma original y busca la venganza apocalíptica que tanto desea.";
+    "Aatrox y sus hermanos, que alguna vez fueron respetados defensores de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor para Runaterra y los derrotaron con hechicería mortal usada con astucia. Pero, después de siglos de encarcelamiento...";
 
   useEffect(() => {
     fetch(
@@ -20,37 +21,72 @@ const ChampInfo = () => {
 
   return (
     <>
-    
-
-      <div className="h-screen flex flex-col justify-items-center py-16 mb-40">
-       
-          <div className="relative">
-            <img
-              className="h-auto w-full "
-              src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
-              alt=""
-            ></img>
-            <div className="h-full w-full bg-gradient-to-t from-[#0a0a0c] absolute top-0 left-0 "></div>
-          </div>
+      <div className="h-full flex flex-col justify-items-center py-16 mb-40">
+        <div className="relative">
+          <img
+            className="h-auto w-full "
+            src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+            alt=""
+          ></img>
+          <div className="h-full w-full bg-gradient-to-t from-[#0a0a0c] absolute top-0 left-0 "></div>
+        </div>
       
-        <div className=" -mt-14 md:-mt-40 mx-auto h-auto w-5/6  flex-row items-center z-10 ">
+        <div className=" -mt-14 md:-mt-40 mx-auto h-auto w-5/6  flex-row items-center z-10  ">
           <div className="flex flex-col justify-center items-center ">
             <h1 className="h-24 text-4xl md:text-8xl text-white  italic tracking-wider font-serif font-bold	">
               AATROX
             </h1>
-            <div className="h-60 grid grid-cols-1 md:grid-cols-2 my-32">
-              <div className="h-80 w-auto  text-white italic">
+            <div className="h-auto grid grid-cols-1 md:grid-cols-2 mx-6">
+              <div className="h-auto w-auto  text-white italic flex items-center py-16">
                 <ul>
-                  <li>Ataque: - - - - - - - - - -</li>
-                  <li>Defensa: - - - - - - - - - -</li>
-                  <li>Magia: - - - - - - - - - -</li>
-                  <li>Dificultad: - - - -</li>
+                  <li>
+                    <span className=" h-30 w-full  py-2 box-border flex ">
+                      <p className="mr-4 w-16 font-bold "> Ataque: </p>
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    </span>
+                  </li>
+                  <li>
+                    <span className=" h-30 w-full  py-2 box-border flex ">
+                      <p className="mr-4  w-16 font-bold "> Defensa: </p>
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                      <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    </span>
+                  </li>
+                  <span className=" h-30 w-full  py-2 box-border flex ">
+                    <p className="mr-4  w-16 font-bold"> Magia: </p>
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                  </span>
+                  <span className=" h-30 w-full  py-2 box-border flex ">
+                    <p className="mr-4  w-16 font-bold"> Dificultad: </p>
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                    <span className="w-6 sm:w-8 mx-1 my-1  skew-x-[-14deg]   bg-yellow-500 box-border inline-block" />
+                  </span>
                 </ul>
               </div>
-              <div className="h-80 w-auto text-white italic " >{lore}</div>
+              <div className="h-auto w-auto text-white italic item flex items-center mx-10">
+                <p>{lore}</p>
+              </div>
+              
             </div>
+           
           </div>
+
         </div>
+     
       </div>
     </>
   );
