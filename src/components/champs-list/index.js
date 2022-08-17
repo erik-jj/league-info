@@ -6,9 +6,10 @@ const ChampsList = () => {
   const [champList, setChampList] = useState([]);
   const [state, setState] = useContext(AppContext);
   const { filtro, busqueda } = state;
+
   const ObtenerDatos = async () => {
     const data = await fetch(
-      "http://ddragon.leagueoflegends.com/cdn/12.15.1/data/en_US/champion.json"
+      "http://ddragon.leagueoflegends.com/cdn/12.15.1/data/es_MX/champion.json"
     );
     const lista = await data.json();
     setChampList(Object.values(lista.data));
@@ -25,12 +26,12 @@ const ChampsList = () => {
         {champList.map((champ) => {
           if (filtro === "All") {
             return champ.name.toLowerCase().includes(busqueda.toLowerCase()) ? (
-              <ChampItem props={champ} />
+              <ChampItem key={`champ-list-${champ.id}`} props={champ} />
             ) : null;
           } else {
             return champ.tags.includes(filtro) ? (
               champ.name.toLowerCase().includes(busqueda.toLowerCase()) ? (
-                <ChampItem props={champ} />
+                <ChampItem key={`champ-list-${champ.id}`} props={champ} />
               ) : null
             ) : null;
           }

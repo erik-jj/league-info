@@ -11,7 +11,6 @@ const ChampDetail = () => {
       <DetailLayout>
       <ChampInfo /> 
        <ImageViewer />
-    
       </DetailLayout>
       <Footer />
     </>
@@ -19,4 +18,3 @@ const ChampDetail = () => {
 };
 
 export default ChampDetail;
-//h-screen py-16 overflow-x-hidden  overflow-y-hidden  bg-fixed  bg-cover bg-center  

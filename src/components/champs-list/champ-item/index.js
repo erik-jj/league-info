@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 const ChampItem = ({ props }) => {
+  
   const navigate = useNavigate();
 
   const handleClick = () => {

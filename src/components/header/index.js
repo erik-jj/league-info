@@ -50,17 +50,15 @@ export default function Header() {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4 my-4">
                     {navigation.map((item) => (
-                      <Link to={item.href}>
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            "text-gray-200 hover:bg-gray-700 tracking-wide hover:text-white px-3 py-2 rounded-md text-lg  font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={classNames(
+                          "text-gray-200 hover:bg-gray-700 tracking-wide hover:text-white px-3 py-2 rounded-md text-lg  font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
                       </Link>
                     ))}
                   </div>
