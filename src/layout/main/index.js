@@ -9,7 +9,7 @@ export default function MainLayout({ children }) {
   return (
     <>
       <div
-        className="h-screen py-16 overflow-x-hidden  overflow-y-hidden  bg-fixed  bg-cover bg-center  "
+        className="h-screen w-screen py-16 overflow-x-hidden  overflow-y-hidden  bg-fixed  bg-cover bg-center  "
         style={divStyle}
       >
         <div className="from-inherit  overflow-hidden overflow-y-scroll z-0 bg-fixed backdrop-blur bg-cover bg-white bg-opacity-5  w-screen h-screen">
