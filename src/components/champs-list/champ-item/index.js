@@ -15,7 +15,7 @@ const ChampItem = ({ props }) => {
         className="rounded-md  border hover:scale-105 border-yellow-400 overflow-hidden  group max-h-96 mx-auto   w-52  sm:w-52  md:w-60 lg:w-60 xl:w-60 flex flex-col justify-center items-center  hover:border-yellow-300  hover:border  hover:cursor-pointer  "
       >
         <img
-          src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.id}_0.jpg`}
+          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.id}_0.jpg`}
           alt={props.name}
           className="h-5/6 w-full object-cover object-top "
         ></img>

@@ -38,7 +38,7 @@ const ChampInfo = () => {
           <div className="relative">
             <img
               className="h-auto w-full "
-              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ?.id}_0.jpg`}
+              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ?.id}_0.jpg`}
               alt={champ?.id}
             ></img>
             <div className="h-1/2 w-full bg-gradient-to-t from-[#0a0a0c] absolute top-1/2 left-0 "></div>

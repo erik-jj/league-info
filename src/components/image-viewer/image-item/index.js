@@ -8,7 +8,7 @@ const ImageItem = ({ props }) => {
       >
         <div className="h-2/4 w-full bg-gradient-to-t from-[#0a0a0c] absolute top-2/4 left-0  "></div>
         <img
-          src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props?.id}_${props?.num}.jpg`}
+          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props?.id}_${props?.num}.jpg`}
           className="block w-full"
           alt="..."
         />

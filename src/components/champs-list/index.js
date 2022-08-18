@@ -9,7 +9,7 @@ const ChampsList = () => {
 
   const ObtenerDatos = async () => {
     const data = await fetch(
-      "http://ddragon.leagueoflegends.com/cdn/12.15.1/data/es_MX/champion.json"
+      "https://ddragon.leagueoflegends.com/cdn/12.15.1/data/es_MX/champion.json"
     );
     const lista = await data.json();
     setChampList(Object.values(lista.data));

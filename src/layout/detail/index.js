@@ -5,7 +5,7 @@ export default function DetailLayout({ children }) {
   const [state] = useContext(AppContext);
   const { currentChamp } = state;
   const divStyle = {
-    backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChamp?.id}_0.jpg')`,
+    backgroundImage: `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChamp?.id}_0.jpg')`,
   };
 
   return (
