@@ -4,7 +4,7 @@ import { AppContext } from "../application/provider";
 
 const ChampsList = () => {
   const [champList, setChampList] = useState([]);
-  const [state, setState] = useContext(AppContext);
+  const [state] = useContext(AppContext);
   const { filtro, busqueda } = state;
 
   const ObtenerDatos = async () => {

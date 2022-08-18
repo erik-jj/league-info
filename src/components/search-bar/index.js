@@ -17,6 +17,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     setState({ ...state, filtro: filter, busqueda: search });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, search]);
 
   const handleSearch = (typed) => {

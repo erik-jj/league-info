@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../../components/application/provider";
 
 export default function DetailLayout({ children }) {
-  const [state, setState] = useContext(AppContext);
+  const [state] = useContext(AppContext);
   const { currentChamp } = state;
   const divStyle = {
     backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChamp?.id}_0.jpg')`,

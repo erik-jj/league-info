@@ -5,7 +5,7 @@ import ButtonItem from "./button-item";
 import ImageItem from "./image-item";
 
 const ImageViewer = () => {
-  const [state, setState] = useContext(AppContext);
+  const [state] = useContext(AppContext);
   const { currentChamp } = state;
   return (
     <>

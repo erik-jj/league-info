@@ -7,7 +7,7 @@ import ImageViewer from "../../../components/image-viewer";
 import { AppContext } from "../../../components/application/provider";
 
 const ChampDetail = () => {
-  const [state, setState] = useContext(AppContext);
+  const [state] = useContext(AppContext);
   const { currentChamp } = state;
 
   return (
