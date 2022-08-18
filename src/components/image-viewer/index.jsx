@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "tw-elements";
 import { AppContext } from "../application/provider";
+import ButtonItem from "./button-item";
 import ImageItem from "./image-item";
 
 const ImageViewer = () => {
@@ -13,43 +14,75 @@ const ImageViewer = () => {
       </p>
 
       <div
-        id="carouselExampleCaptions"
+        id="carousel"
         className="carousel slide relative"
         data-bs-ride="carousel"
       >
         <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            aria-label="Slide 1"
-            className="active"
-            aria-current="true"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+          {currentChamp?.skins?.map((currentButton, i) => {
+            switch (i) {
+              case 0:
+                return null;
+              case 1:
+                return (
+                  <ButtonItem
+                    props={{
+                      currentNum: `${i - 1}`,
+                      next: `Slide ${i}`,
+                      mode: "active",
+                      current: "true",
+                    }}
+                  />
+                );
+
+              default:
+                return (
+                  <ButtonItem
+                    props={{
+                      currentNum: `${i - 1}`,
+                      next: `Slide ${i}`,
+                    }}
+                  />
+                );
+            }
+          })}
         </div>
 
         <div className="carousel-inner relative w-full overflow-hidden">
-          <ImageItem props={{ mode: "active", num: 1, id: "Aatrox" }} />
-          <ImageItem props={{ mode: "", num: 2, id: "Aatrox" }} />
-          <ImageItem props={{ mode: "", num: 3, id: "Aatrox" }} />
+          {currentChamp?.skins?.map((skin, i) => {
+            switch (i) {
+              case 0:
+                return null;
+              case 1:
+                return (
+                  <ImageItem
+                    props={{
+                      mode: "active",
+                      num: skin.num,
+                      id: `${currentChamp?.id}`,
+                      name: skin.name,
+                    }}
+                  />
+                );
+              default:
+                return (
+                  <ImageItem
+                    props={{
+                      mode: "",
+                      num: skin.num,
+                      id: `${currentChamp?.id}`,
+                      name: skin.name,
+                    }}
+                  />
+                );
+            }
+          })}
         </div>
 
         <button
           className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
           type="button"
-          data-bs-target="#carouselExampleCaptions"
+          data-bs-target="#carousel"
           data-bs-slide="prev"
         >
           <span
@@ -61,7 +94,7 @@ const ImageViewer = () => {
         <button
           className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
           type="button"
-          data-bs-target="#carouselExampleCaptions"
+          data-bs-target="#carousel"
           data-bs-slide="next"
         >
           <span

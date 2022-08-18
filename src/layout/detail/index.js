@@ -13,7 +13,7 @@ export default function DetailLayout({ children }) {
       <div className="h-screen  w-screen py-16    overflow-hidden overflow-y-auto  bg-[#0a0a0c] relative flex justify-center  ">
         <div
           style={divStyle}
-          className="h-2/5 sm:h-5/6 w-full bg-local bg-cover  bg-center bg-no-repeat blur  top-0 left-0 z-0 bg-gradient-to-t from-black  "
+          className="bg-[#0a0a0c] h-2/5 sm:h-5/6 w-full bg-local bg-cover  bg-center bg-no-repeat blur  top-0 left-0 z-0    "
         ></div>
         <div className="max-w-7xl   overflow-y-hidden  py-10 sm:px-8 lg:px-6  absolute inline-block top-0 z-10  ">
           {children}
