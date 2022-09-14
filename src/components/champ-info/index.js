@@ -34,7 +34,7 @@ const ChampInfo = () => {
   return (
     <>
       {champ?.id !== undefined && (
-        <div className="h-full flex flex-col justify-items-center py-16 mb-40">
+        <div className="h-full flex flex-col justify-items-center py-16 md:mb-20 mb-10">
           <div className="relative">
             <img
               className="h-auto w-full "
@@ -52,42 +52,42 @@ const ChampInfo = () => {
                 <div className="h-auto w-auto  text-white  flex  py-10 tracking-wide italic ">
                   <ul>
                     <li>
-                      <span className=" h-30 w-full  py-2 box-border flex ">
+                    <span className="w-full md:py-2 py-1 box-border flex ">
                         <p className="mr-4 w-16  "> Ataque: </p>
                         {[...Array(champ.info?.attack)].map((x, i) => (
                           <span
                             key={`info-attack-${i}`}
-                            className="w-6 sm:w-8 mx-1 my-1 skew-x-[-14deg] bg-yellow-400 box-border inline-block"
+                            className="my-auto md:h-auto md:w-8 h-4 w-4 mx-1 md:my-1 skew-x-[-24deg] bg-yellow-400 box-border inline-block"
                           />
                         ))}
                       </span>
                     </li>
                     <li>
-                      <span className=" h-30 w-full  py-2 box-border flex ">
+                      <span className="w-full md:py-2 py-1 box-border flex ">
                         <p className="mr-4  w-16"> Defensa: </p>
                         {[...Array(champ.info?.defense)].map((x, i) => (
                           <span
                             key={`info-defense-${i}`}
-                            className="w-6 sm:w-8 mx-1 my-1 skew-x-[-14deg] bg-yellow-400 box-border inline-block"
+                            className="my-auto md:h-auto md:w-8 h-4 w-4 mx-1 md:my-1 skew-x-[-24deg] bg-yellow-400 box-border inline-block"
                           />
                         ))}
                       </span>
                     </li>
-                    <span className=" h-30 w-full  py-2 box-border flex ">
+                    <span className="w-full md:py-2 py-1 box-border flex ">
                       <p className="mr-4  w-16 "> Magia: </p>
                       {[...Array(champ.info?.magic)].map((x, i) => (
                         <span
                           key={`info-magic-${i}`}
-                          className="w-6 sm:w-8 mx-1 my-1 skew-x-[-14deg] bg-yellow-400 box-border inline-block"
+                          className="my-auto md:h-auto md:w-8 h-4 w-4 mx-1 md:my-1 skew-x-[-24deg] bg-yellow-400 box-border inline-block"
                         />
                       ))}
                     </span>
-                    <span className=" h-30 w-full  py-2 box-border flex ">
-                      <p className="mr-4  w-16 "> Dificultad: </p>
+                    <span className="w-full md:py-2 py-1 box-border flex ">
+                      <p className="mr-4 w-16"> Dificultad: </p>
                       {[...Array(champ.info?.difficulty)].map((x, i) => (
                         <span
                           key={`info-difficulty-${i}`}
-                          className="w-6 sm:w-8 mx-1 my-1 skew-x-[-14deg] bg-yellow-400 box-border inline-block"
+                          className="my-auto md:h-auto md:w-8 h-4 w-4 mx-1 md:my-1 skew-x-[-24deg] bg-yellow-400 box-border inline-block"
                         />
                       ))}
                     </span>

@@ -9,7 +9,7 @@ const ImageViewer = () => {
   const { currentChamp } = state;
   return (
     <>
-      <p className="text-white text-5xl font-bold tracking-[0.075em] font-serif text-center mb-6">
+      <p className="text-white text-5xl font-bold tracking-[0.075em] font-serif text-center mb-6 ">
         Aspectos
       </p>
 
