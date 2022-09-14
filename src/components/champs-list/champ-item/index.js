@@ -17,6 +17,7 @@ const ChampItem = ({ props }) => {
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.id}_0.jpg`}
           alt={props.name}
+          loading="lazy"
           className="h-5/6 w-full object-cover object-top "
         ></img>
         <div className="h-1/6 bg-slate-900 w-full flex pl-4 items-center">
