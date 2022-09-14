@@ -12,7 +12,7 @@ const ChampItem = ({ props }) => {
     <>
       <div
         onClick={handleClick}
-        className="rounded-md  border hover:scale-105 border-yellow-400 overflow-hidden  group max-h-96 mx-auto   w-52  sm:w-52  md:w-60 lg:w-60 xl:w-60 flex flex-col justify-center items-center  hover:border-yellow-300  hover:border  hover:cursor-pointer  "
+        className="rounded-md  border hover:scale-105 border-yellow-400 overflow-hidden  group max-h-96 mx-auto w-44 sm:w-44  md:w-60 lg:w-60 xl:w-60 flex flex-col justify-center items-center  hover:border-yellow-300  hover:border  hover:cursor-pointer  "
       >
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.id}_0.jpg`}
