@@ -43,12 +43,12 @@ const ChampInfo = () => {
             ></img>
             <div className="h-1/2 w-full bg-gradient-to-t from-[#0a0a0c] absolute top-1/2 left-0 "></div>
           </div>
-          <div className=" -mt-14 md:-mt-40 mx-auto h-auto w-11/12  flex-row items-center z-10  ">
+          <div className=" -mt-14 md:-mt-20 lg:-mt-40 mx-auto h-auto w-11/12  flex-row items-center z-10  ">
             <div className="flex flex-col justify-center items-center ">
-              <h1 className="h-24 text-4xl md:text-8xl text-white  italic tracking-wider font-serif font-bold	">
+              <h1 className="h-24 text-4xl lg:text-8xl md:text-6xl text-white  italic tracking-wider font-serif font-bold	">
                 {champ?.name}
               </h1>
-              <div className="h-auto grid grid-cols-1 md:grid-cols-2 mx-6">
+              <div className="h-auto grid grid-cols-1 lg:grid-cols-2 mx-6">
                 <div className="h-auto w-auto  text-white  flex  py-10 tracking-wide italic ">
                   <ul>
                     <li>
