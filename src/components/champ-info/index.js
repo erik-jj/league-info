@@ -34,8 +34,8 @@ const ChampInfo = () => {
   return (
     <>
       {champ?.id !== undefined && (
-        <div className="h-full flex flex-col justify-items-center py-16 md:mb-20 mb-10">
-          <div className="relative">
+        <div className="h-full flex flex-col justify-items-center py-16 md:mb-20 mb-10  ">
+          <div className="relative ">
             <img
               className="h-auto w-full "
               src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ?.id}_0.jpg`}

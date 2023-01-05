@@ -22,7 +22,7 @@ const ChampsList = () => {
 
   return (
     <>
-      <div className=" grid grid-cols-2 my-10 md:gap-8 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mx-0 	">
+      <div className="h-full  min-h-screen w-full grid grid-cols-2 my-10 md:gap-8 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mx-0  ">
         {champList.map((champ) => {
           if (filtro === "All") {
             return champ.name.toLowerCase().includes(busqueda.toLowerCase()) ? (

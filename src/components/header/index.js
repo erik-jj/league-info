@@ -15,7 +15,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className=" fixed w-screen  bg-slate-900 z-20 overflow-x-hidden ">
+    <Disclosure as="nav" className="fixed h-auto w-full bg-slate-900 z-20  top-0">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

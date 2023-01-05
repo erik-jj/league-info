@@ -1,4 +1,5 @@
 import fondo from "../../assets/background/background.PNG";
+import Footer from "../../components/footer";
 
 export default function MainLayout({ children }) {
   const divStyle = {
@@ -9,14 +10,15 @@ export default function MainLayout({ children }) {
   return (
     <>
       <div
-        className="h-screen w-screen py-16 overflow-x-hidden  overflow-y-hidden  bg-fixed  bg-cover bg-center  "
+        className=" h-full w-full  bg-fixed  bg-cover bg-center  overflow-y-hidden mt-16"
         style={divStyle}
       >
-        <div className="from-inherit  overflow-hidden overflow-y-scroll z-0 bg-fixed backdrop-blur bg-cover bg-white bg-opacity-5  w-screen h-screen">
-          <div className="max-w-7xl mx-auto py-10 sm:px-8 lg:px-6 ">
+        <div className="from-inherit overflow-y-auto z-0 bg-fixed backdrop-blur bg-cover bg-white bg-opacity-5  w-full h-full ">
+        <div className="max-w-7xl mx-auto  sm:px-8 lg:px-6  ">
             {children}
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
