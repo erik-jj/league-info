@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer className=" px-10 py-2   bg-slate-900  shadow md:flex md:items-center md:justify-between md:py-4 md:px-20 z-0 w-full overflow-hidden ">
         <span className="text-sm text-gray-200 sm:text-center ">
-          © 2022{" "}
+          © 2023{" "}
           <Link to="/" className="hover:underline">
             Riot Games
           </Link>
